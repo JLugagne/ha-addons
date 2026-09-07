@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+- Improve setup process by importing all the floors from sh3d files
+- Fix some UI issues in editor mode
+
 ## 0.3.1
 
 - Fix device listing via the Supervisor API (duplicated `/api` path segment).
