@@ -1,0 +1,6 @@
+configuration:
+  log_level:
+    name: Log level
+    description: Verbosity of the add-on logs.
+network:
+  8080/tcp: Walldash web interface (direct access, no Home Assistant login required).

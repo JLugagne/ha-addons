@@ -1,0 +1,28 @@
+name: Walldash
+version: "0.3.0"
+slug: walldash
+description: Touch-first 3D home automation dashboard for wall-mounted tablets.
+url: https://github.com/JLugagne/walldash
+arch:
+  - amd64
+  - aarch64
+init: false
+image: ghcr.io/jlugagne/walldash
+ports:
+  8080/tcp: 8080
+ports_description:
+  8080/tcp: Walldash web interface (direct access, no Home Assistant login required)
+webui: http://[HOST]:[PORT]/
+boot: auto
+startup: application
+homeassistant_api: true
+map:
+  - type: data
+    read_only: false
+options:
+  log_level: info
+schema:
+  log_level: list(debug|info|warn|error)
+watchdog: http://[HOST]:8080/api/health
+panel_icon: mdi:tablet-dashboard
+stage: experimental
