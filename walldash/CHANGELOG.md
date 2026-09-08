@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.3
+- Fix some UI issues in the onboarding process
+
 ## 0.3.2
 - Improve setup process by importing all the floors from sh3d files
 - Fix some UI issues in editor mode
