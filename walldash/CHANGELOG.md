@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0
+- New 3D house overview: all floors stacked in one scene, opened by default when the app launches.
+- Lamps appear in the overview at mid-room height, follow Home Assistant state live, and toggle on tap.
+- The overview remembers your camera position and zoom between visits.
+- Align floors horizontally/vertically and toggle their visibility from the 2D editor.
+- Shared level/house selector across the floor and overview views, draggable zone labels, and an opaque wall option.
+- Faster frontend builds (native TypeScript compiler).
+
 ## 0.3.3
 - Fix some UI issues in the onboarding process
 
