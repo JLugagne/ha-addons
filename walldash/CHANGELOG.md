@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+- Phone layout: below 640px a dashboard becomes a vertical two-column flow instead of the fixed grid, ordered like the tablet layout; the top bar compacts.
+- Per-dashboard grid size: Setup → Dashboards gains a **Grid** editor (columns × rows), stored per dashboard.
+- 3D view: drag vertically to tilt the scene, so touch tablets (iPad) can rotate it without a mouse wheel.
+- Plan editor: leaving with unsaved changes now asks for confirmation.
+
 ## 1.0.0
 - Unified switch widgets: device toggles and automation switches now share one design.
 - 1×1 switch tiles are a full-tile exclusive ON/OFF button; wider tiles keep the reading and toggle track.
