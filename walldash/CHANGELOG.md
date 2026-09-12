@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.2
+- Bump the `egauth` dependency to v0.13.0. No user-visible change.
+
 ## 1.2.1
 - A shield button in the top bar (owner/admin) opens **Setup → Access** directly and badges the number of pending enrollment requests.
 - Devices can be renamed from the Access table (the default label is the User-Agent).
