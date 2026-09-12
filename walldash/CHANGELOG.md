@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3
+- The Access panel device list and the top-bar pending indicator refresh the session automatically when the access token has expired, instead of showing an empty list.
+- Documentation: the user manual now documents every setting in detail.
+
 ## 1.3.2
 - The one-time enrollment code is written to the add-on log again (`otp_issued`), restoring the bootstrap channel for the first device.
 
