@@ -25,10 +25,13 @@ from the store. Images are pre-built and published to GHCR — nothing compiles 
 | --- | --- |
 | [Walldash](walldash/) | Touch-first 3D home automation dashboard for wall-mounted tablets. No Home Assistant login needed on tablets (direct port access). |
 
+📖 **Walldash user manual:** <https://jlugagne.github.io/walldash/>
+
 ## Support
 
 Issues per add-on live in their own folders; application source and general docs:
 [https://github.com/JLugagne/walldash](https://github.com/JLugagne/walldash).
+User manual: [https://jlugagne.github.io/walldash/](https://jlugagne.github.io/walldash/).
 
 ## License
 

@@ -5,6 +5,9 @@ dashboard for wall-mounted touchscreens and tablets. Trace your floor plan in th
 built-in 2D editor (or import it from Sweet Home 3D), drag and drop your devices
 onto it, and control everything from an isometric 3D view. No Blender, no YAML.
 
+> 📖 **Full user manual:** <https://jlugagne.github.io/walldash/> — installation,
+> onboarding, the 3D views, the 2D editor and the dashboards.
+
 ## Installation
 
 1. Add this repository to your add-on store (see the repository README).

@@ -1,11 +1,18 @@
 # Changelog
 
+## 1.0.0
+- Unified switch widgets: device toggles and automation switches now share one design.
+- 1×1 switch tiles are a full-tile exclusive ON/OFF button; wider tiles keep the reading and toggle track.
+- Removed the sensor sparklines (number, bar and arc widgets) for a cleaner dashboard.
+- User manual published at <https://jlugagne.github.io/walldash/>.
+
 ## 0.5.0
  - Overviews are now Dashboards — across the UI, the routes (/dashboards), the API (/api/dashboards) and the database (the overview_dashboards table is renamed to dashboards by migration 010). Existing installations migrate automatically.
  - Display-only dashboard view — the everyday dashboard is read-only. A dashboard switcher appears in the top bar as soon as you have more than one, so you can flip between them.
  - Editing lives in Setup — Setup → Dashboards opens the editor for the dashboard you are viewing: rename, delete, add widgets, edit layout, and set a background. Each dashboard keeps its own picture.
  - Contextual Setup button — on a floor it opens that floor's 2D editor; on the Dashboards view it opens the current dashboard's editor. Exit setup returns you to the view, reopening the dashboard you were editing.
  - No more admin mode — editing is a deliberate, labelled mode rather than a hidden toggle.
+
 ## 0.4.0
 - New 3D house overview: all floors stacked in one scene, opened by default when the app launches.
 - Lamps appear in the overview at mid-room height, follow Home Assistant state live, and toggle on tap.
