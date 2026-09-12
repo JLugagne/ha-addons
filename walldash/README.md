@@ -8,3 +8,18 @@ no Blender, no YAML.
 Full documentation: [DOCS.md](DOCS.md). User manual:
 [**jlugagne.github.io/walldash**](https://jlugagne.github.io/walldash/).
 Application source: [https://github.com/JLugagne/walldash](https://github.com/JLugagne/walldash).
+
+## Configuration
+
+The add-on is configured from the Home Assistant UI (Settings → Add-ons → Walldash →
+Configuration):
+
+- `domain` — public hostname used for CORS and same-origin checks, with or without
+  `https://` (e.g. `walldash.domain.tld`). Set it when a reverse proxy rewrites the
+  `Host` header.
+- `token_secret` — optional HS256 signing key for access/refresh tokens. Leave empty to
+  auto-generate and persist one in `/data`.
+- `allowed_origins` — optional comma-separated trusted origins for CORS and same-origin
+  checks.
+
+See [DOCS.md](DOCS.md) for the full options table.

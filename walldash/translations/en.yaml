@@ -2,5 +2,21 @@ configuration:
   log_level:
     name: Log level
     description: Verbosity of the add-on logs.
+  domain:
+    name: Domain
+    description: >-
+      Public hostname used for CORS and same-origin checks, with or without
+      https:// (for example walldash.domain.tld). Set it when a reverse proxy
+      rewrites the Host header.
+  token_secret:
+    name: Token secret
+    description: >-
+      Optional HS256 signing key for access/refresh tokens (at least 32 bytes).
+      Leave empty to auto-generate and persist one in /data.
+  allowed_origins:
+    name: Allowed origins
+    description: >-
+      Optional comma-separated trusted origins for CORS and same-origin checks.
+      Only needed when a reverse proxy rewrites the Host header.
 network:
   8080/tcp: Walldash web interface (direct access, no Home Assistant login required).

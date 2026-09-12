@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+- Per-device sign-in: each device is an anonymous account enrolled with a single-use one-time code (OTP, 15 minutes) shown in the add-on log (`otp_issued`) and in **Setup → Access**. No Home Assistant login on tablets.
+- The first device becomes `owner`; owner/admin can list devices, change roles and revoke any device. Access tokens live 15 minutes, refresh tokens 60 days with rotation.
+- New options: `domain` (public hostname used for CORS/same-origin), `allowed_origins`, and `token_secret`.
+- HTTPS is required for the authentication cookies; reach the add-on through a TLS reverse proxy.
+
 ## 1.1.1
 - Plan editor: devices can now be dragged from the palette onto the plan with a finger on an iPad; the crosshair fallback is always visible.
 
