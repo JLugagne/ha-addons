@@ -24,6 +24,7 @@ onto it, and control everything from an isometric 3D view. No Blender, no YAML.
 | `log_level` | `info` | Verbosity of the add-on logs: `debug`, `info`, `warn`, `error`. |
 | `domain` | _(empty)_ | Public hostname used for CORS and same-origin checks, with or without `https://` (e.g. `walldash.domain.tld`). Set it when a reverse proxy rewrites the `Host` header. |
 | `token_secret` | _(auto-generated)_ | Optional HS256 signing key for access/refresh tokens (at least 32 bytes). Leave empty to auto-generate and persist one in `/data`; keep it stable, changing it invalidates all sessions. |
+| `secret_key` | _(empty)_ | Optional 32-character key-encryption key. When set, the auto-generated token signing key is encrypted (AES-256-GCM) before being stored, so database copies and Home Assistant snapshots no longer expose it. Keep it stable and backed up: if lost, the stored signing key cannot be decrypted and devices must re-enroll. Do not remove it once set. |
 | `allowed_origins` | _(empty)_ | Optional comma-separated trusted origins for CORS and same-origin checks, needed when a reverse proxy rewrites the `Host` header. Accepts `https://host` or a bare `host`. |
 
 All data (floor plans, device placements, dashboards) lives in the add-on `/data`

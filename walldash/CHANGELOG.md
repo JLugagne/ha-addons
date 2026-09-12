@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.2
+- The one-time enrollment code is written to the add-on log again (`otp_issued`), restoring the bootstrap channel for the first device.
+
+## 1.3.1
+- Security: the auto-generated token signing key can be encrypted at rest with the new optional `secret_key` option (AES-256-GCM), so database copies and Home Assistant snapshots no longer expose it. Keep it stable and backed up; removing it after it has been set fails closed.
+- The container runs as an unprivileged user; base images are pinned by digest.
+
+## 1.3.0
+- Security hardening: every state-changing management endpoint now requires the owner/admin scope; a standard device keeps read access and the action route only.
+- Logout and device revocation now invalidate already-issued access tokens immediately.
+- Strict same-origin checks, security headers (CSP, X-Frame-Options, HSTS and more), and CORS no longer reflects arbitrary origins.
+- Request bodies and `.sh3d` import are size-bounded; Home Assistant entity IDs are validated.
+
 ## 1.2.2
 - Bump the `egauth` dependency to v0.13.0. No user-visible change.
 

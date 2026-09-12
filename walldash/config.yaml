@@ -1,5 +1,5 @@
 name: Walldash
-version: "1.2.2"
+version: "1.3.2"
 slug: walldash
 description: Touch-first 3D home automation dashboard for wall-mounted tablets.
 url: https://github.com/JLugagne/walldash
@@ -23,11 +23,13 @@ options:
   log_level: info
   domain: ""
   token_secret: ""
+  secret_key: ""
   allowed_origins: ""
 schema:
   log_level: list(debug|info|warn|error)
   domain: str?
   token_secret: password?
+  secret_key: password?
   allowed_origins: str?
 watchdog: http://[HOST]:8080/api/health
 panel_icon: mdi:tablet-dashboard
