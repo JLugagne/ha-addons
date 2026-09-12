@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.1
+- Plan editor: devices can now be dragged from the palette onto the plan with a finger on an iPad; the crosshair fallback is always visible.
+
 ## 1.1.0
 - Phone layout: below 640px a dashboard becomes a vertical two-column flow instead of the fixed grid, ordered like the tablet layout; the top bar compacts.
 - Per-dashboard grid size: Setup → Dashboards gains a **Grid** editor (columns × rows), stored per dashboard.
