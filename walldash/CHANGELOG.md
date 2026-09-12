@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+- A shield button in the top bar (owner/admin) opens **Setup → Access** directly and badges the number of pending enrollment requests.
+- Devices can be renamed from the Access table (the default label is the User-Agent).
+
 ## 1.2.0
 - Per-device sign-in: each device is an anonymous account enrolled with a single-use one-time code (OTP, 15 minutes) shown in the add-on log (`otp_issued`) and in **Setup → Access**. No Home Assistant login on tablets.
 - The first device becomes `owner`; owner/admin can list devices, change roles and revoke any device. Access tokens live 15 minutes, refresh tokens 60 days with rotation.
