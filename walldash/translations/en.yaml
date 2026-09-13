@@ -26,5 +26,12 @@ configuration:
     description: >-
       Optional comma-separated trusted origins for CORS and same-origin checks.
       Only needed when a reverse proxy rewrites the Host header.
+  rescue_mode:
+    name: Rescue mode
+    description: >-
+      Recovery switch. When enabled, the next device that opens Walldash claims the
+      owner role, even if other devices already exist. Use it only to recover from a
+      lost owner device, then set it back to false: the mode is consumed after a
+      single use and a restart re-arms it.
 network:
   8080/tcp: Walldash web interface (direct access, no Home Assistant login required).

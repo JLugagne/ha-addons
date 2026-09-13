@@ -15,7 +15,9 @@ onto it, and control everything from an isometric 3D view. No Blender, no YAML.
 3. No token setup is required: the add-on talks to Home Assistant through the
    Supervisor API automatically.
 4. Open the web UI at `http://<home-assistant-ip>:8080` — on your wall tablets
-   no Home Assistant login is needed (direct port access, no Ingress).
+   no Home Assistant login is needed (direct port access, no Ingress). The first
+   device that opens it becomes the **owner** automatically; add further devices
+   from **Setup → Access** by approving them or sending an invitation link.
 
 ## Configuration
 
@@ -26,9 +28,21 @@ onto it, and control everything from an isometric 3D view. No Blender, no YAML.
 | `token_secret` | _(auto-generated)_ | Optional HS256 signing key for access/refresh tokens (at least 32 bytes). Leave empty to auto-generate and persist one in `/data`; keep it stable, changing it invalidates all sessions. |
 | `secret_key` | _(empty)_ | Optional 32-character key-encryption key. When set, the auto-generated token signing key is encrypted (AES-256-GCM) before being stored, so database copies and Home Assistant snapshots no longer expose it. Keep it stable and backed up: if lost, the stored signing key cannot be decrypted and devices must re-enroll. Do not remove it once set. |
 | `allowed_origins` | _(empty)_ | Optional comma-separated trusted origins for CORS and same-origin checks, needed when a reverse proxy rewrites the `Host` header. Accepts `https://host` or a bare `host`. |
+| `rescue_mode` | `false` | Recovery switch. When enabled, the next device that opens Walldash claims the owner role, even if other devices already exist. Enable it only to recover from a lost owner device, then set it back to `false`; it is consumed after a single use. |
 
 All data (floor plans, device placements, dashboards) lives in the add-on `/data`
 volume and survives updates, reboots, and backups.
+
+## Device access
+
+- **First device**: when no device has enrolled yet, the first one to open Walldash
+  becomes the **owner** automatically — no code to read anywhere.
+- **More devices**: from **Setup → Access**, either approve a device that is waiting,
+  or create a single-use **invitation** (valid for 15 minutes) and share its link or
+  token with the new device.
+- **Lost owner device**: enable the `rescue_mode` option, restart the add-on, then
+  open Walldash on the device that should become the new owner. Set `rescue_mode`
+  back to `false` afterwards; it is consumed after that single use.
 
 ## Usage tips
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+- New device access model: the first device to open Walldash becomes the owner automatically (no one-time code to read from the logs), additional devices are approved from Setup → Access or enrolled with a single-use 15-minute invitation link, and a `rescue_mode` option recovers access when the owner device is lost.
+- One-time codes are no longer written to the add-on log.
+
 ## 1.3.4
 - Fix spurious logouts: a refresh token replayed shortly after a burst of reconnects (phone waking, background retry) is treated as benign concurrency instead of token theft. The reuse grace window is now 30 seconds.
 
