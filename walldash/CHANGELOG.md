@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.4
+- Fix spurious logouts: a refresh token replayed shortly after a burst of reconnects (phone waking, background retry) is treated as benign concurrency instead of token theft. The reuse grace window is now 30 seconds.
+
 ## 1.3.3
 - The Access panel device list and the top-bar pending indicator refresh the session automatically when the access token has expired, instead of showing an empty list.
 - Documentation: the user manual now documents every setting in detail.
