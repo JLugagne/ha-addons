@@ -39,8 +39,8 @@ volume and survives updates, reboots, and backups.
 - **First device**: when no device has enrolled yet, the first one to open Walldash
   becomes the **owner** automatically — no code to read anywhere.
 - **More devices**: from **Setup → Access**, either approve a device that is waiting,
-  or create a single-use **invitation** (valid for 15 minutes) and share its link or
-  token with the new device.
+  or create a single-use **invitation** (valid for 15 minutes) and share its link with
+  the new device.
 - **Lost owner device**: enable the `rescue_mode` option, restart the add-on, then
   open Walldash on the device that should become the new owner. Set `rescue_mode`
   back to `false` afterwards; it is consumed after that single use.
@@ -49,7 +49,8 @@ volume and survives updates, reboots, and backups.
   open live connections are closed. After an add-on restart the in-memory revocation
   list is empty, so a previously revoked but unexpired access token can linger for at
   most 15 minutes; actions stay blocked and signing in again always requires approval
-  or an invitation.
+  or an invitation. Revoked devices are hidden in the device list by default — untick
+  **Hide revoked** to show them.
 
 ## Usage tips
 

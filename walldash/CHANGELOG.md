@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2
+- Refresh-token resilience: the token store now honors the configured reuse-grace window instead of a hardcoded 10 seconds, so a device replaying a just-rotated token after waking is no longer mistaken for token theft and signed out.
+- Access panel: revoked devices are hidden by default; untick **Hide revoked** to list them.
+- Sign-in screen: removed the manual invitation-token field. Approvals need no code, and invitations open from the link an owner shares.
+- Refreshed user-manual screenshots and wording.
+
 ## 1.4.1
 - Security hardening: admins can no longer revoke, rename or change an owner, and the last owner is protected.
 - Revoking a device (or changing its role) now invalidates its refresh and access tokens and closes its live WebSockets immediately; the WebSocket hub re-validates the account before every action.
