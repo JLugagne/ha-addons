@@ -16,11 +16,17 @@ configuration:
   secret_key:
     name: Secret key
     description: >-
-      Optional 32-character key-encryption key. When set, the auto-generated token
-      signing key is encrypted (AES-256-GCM) before being stored, so database copies
-      and Home Assistant snapshots no longer expose it. Keep it stable and backed up:
-      if it is lost the stored signing key cannot be decrypted and devices must
-      re-enroll. Do not remove it once set.
+      Optional 32-byte key-encryption key for the stored token signing key. Because
+      the add-on options file and the database share the /data volume, this option
+      alone does not protect against full /data snapshots; prefer secret_key_file on
+      a path excluded from backups. Keep it stable: removing it after use fails closed.
+  secret_key_file:
+    name: Secret key file
+    description: >-
+      Path to a file containing the key-encryption key (whitespace-trimmed, exactly
+      32 bytes), read when secret_key is empty. Point it at an operator-mounted path
+      excluded from backups to protect against snapshots that leave the host. An
+      unreadable or empty file aborts startup. Ignored when secret_key is set.
   allowed_origins:
     name: Allowed origins
     description: >-

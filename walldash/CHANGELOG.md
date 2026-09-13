@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.1
+- Security hardening: admins can no longer revoke, rename or change an owner, and the last owner is protected.
+- Revoking a device (or changing its role) now invalidates its refresh and access tokens and closes its live WebSockets immediately; the WebSocket hub re-validates the account before every action.
+- JSON request bodies are capped at 1 MiB (32/64 MiB for restore and plan imports) and over-limit bodies return 413.
+- Removed the unused CSRF-token endpoint and its in-memory store.
+- The auto-generated signing key is sealed at rest with the `secret_key` option, or (when unset) a generated key-encryption key file next to the database (`/data/walldash.db.kek`, mode `0600`); full `/data` snapshots are credential-grade material. For protection against snapshots that leave the host, set `token_secret` or point the new `secret_key_file` option at a path excluded from backups.
+- Overflow-safe widget layout validation, strict explicit-scheme CORS matching, and govulncheck pinned in CI.
+
 ## 1.4.0
 - New device access model: the first device to open Walldash becomes the owner automatically (no one-time code to read from the logs), additional devices are approved from Setup → Access or enrolled with a single-use 15-minute invitation link, and a `rescue_mode` option recovers access when the owner device is lost.
 - One-time codes are no longer written to the add-on log.
