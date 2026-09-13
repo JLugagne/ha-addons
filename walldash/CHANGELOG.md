@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.5
+- Security hardening across sessions, snapshots and imports.
+- Revocations now survive restarts: a logout, a demoted or revoked device stays signed out after the add-on restarts, instead of its unexpired access token being accepted again for up to 15 minutes.
+- Privileged actions (approving a device, creating or revoking an invitation, revoking a device, changing a role) re-check the account in the database, so a device whose access was revoked or lowered can no longer use an old token to perform them.
+- Cross-site request protection compares the whole origin (scheme, host and port), not just the host, so a page served over plain HTTP on the same host cannot act on an HTTPS deployment.
+- Restored backups are validated as a whole: a snapshot that references missing or mismatched levels or dashboards is refused instead of being imported into a broken state.
+- Level and dashboard names are length-limited, and background images must be one of the bundled backgrounds.
+- Fixed concurrent plan imports (Sweet Home 3D and AI-JSON): two simultaneous imports can no longer share wall, opening or zone identifiers.
+- API responses are no longer cacheable, security headers also cover the add-on's own redirects, and websocket errors no longer expose the Home Assistant URL.
+- A placement can no longer be saved against another level.
+
 ## 1.4.4
 - Promoting a device (for example **device → admin**) no longer signs it out: the session and its live connection stay, and only the access token is re-issued so the new permissions take effect.
 - Lowering a device's role still signs it out immediately, so reduced access can never be outlived by an already-issued token.

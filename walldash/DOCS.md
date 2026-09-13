@@ -46,11 +46,9 @@ volume and survives updates, reboots, and backups.
   back to `false` afterwards; it is consumed after that single use.
 - **Revoking or demoting a device**: revoking a device, or lowering its role, signs it out
   immediately — its refresh tokens are cleared, its access token is rejected and its
-  open live connections are closed. Promoting a device keeps it signed in. After an add-on restart the in-memory revocation
-  list is empty, so a previously revoked but unexpired access token can linger for at
-  most 15 minutes; actions stay blocked and signing in again always requires approval
-  or an invitation. Revoked devices are hidden in the device list by default — untick
-  **Hide revoked** to show them.
+  open live connections are closed. The rejection is persisted and replayed at startup,
+  so it survives an add-on restart. Promoting a device keeps it signed in. Revoked
+  devices are hidden in the device list by default — untick **Hide revoked** to show them.
 
 ## Usage tips
 
