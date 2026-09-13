@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.3
+- Keep devices signed in: an automatic token refresh no longer downgrades the 60-day "remember me" cookie to a session cookie. Kiosk browsers and WebViews that clear session cookies when they are recycled no longer log the device out after a period of inactivity.
+
 ## 1.4.2
 - Refresh-token resilience: the token store now honors the configured reuse-grace window instead of a hardcoded 10 seconds, so a device replaying a just-rotated token after waking is no longer mistaken for token theft and signed out.
 - Access panel: revoked devices are hidden by default; untick **Hide revoked** to list them.
