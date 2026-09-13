@@ -44,9 +44,9 @@ volume and survives updates, reboots, and backups.
 - **Lost owner device**: enable the `rescue_mode` option, restart the add-on, then
   open Walldash on the device that should become the new owner. Set `rescue_mode`
   back to `false` afterwards; it is consumed after that single use.
-- **Revoking a device**: revoking a device (or changing its role) signs it out
+- **Revoking or demoting a device**: revoking a device, or lowering its role, signs it out
   immediately — its refresh tokens are cleared, its access token is rejected and its
-  open live connections are closed. After an add-on restart the in-memory revocation
+  open live connections are closed. Promoting a device keeps it signed in. After an add-on restart the in-memory revocation
   list is empty, so a previously revoked but unexpired access token can linger for at
   most 15 minutes; actions stay blocked and signing in again always requires approval
   or an invitation. Revoked devices are hidden in the device list by default — untick

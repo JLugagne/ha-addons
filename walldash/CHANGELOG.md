@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.4
+- Promoting a device (for example **device → admin**) no longer signs it out: the session and its live connection stay, and only the access token is re-issued so the new permissions take effect.
+- Lowering a device's role still signs it out immediately, so reduced access can never be outlived by an already-issued token.
+
 ## 1.4.3
 - Keep devices signed in: an automatic token refresh no longer downgrades the 60-day "remember me" cookie to a session cookie. Kiosk browsers and WebViews that clear session cookies when they are recycled no longer log the device out after a period of inactivity.
 
