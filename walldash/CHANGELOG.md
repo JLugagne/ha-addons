@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.6
+- Fixed a case where promoting a device (for example **device → admin**) could sign the promoted device out: a promotion no longer revokes the access token, so the device keeps its session and picks up the new permissions on its next action. Lowering a role, revoking a device and logging out still sign out immediately.
+
 ## 1.4.5
 - Security hardening across sessions, snapshots and imports.
 - Revocations now survive restarts: a logout, a demoted or revoked device stays signed out after the add-on restarts, instead of its unexpired access token being accepted again for up to 15 minutes.
