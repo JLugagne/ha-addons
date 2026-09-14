@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.7
+- Fixed the floor view on touch devices: switching floors could leave a blank canvas with the device badges piled in a corner, because the 3D scene only re-rendered on camera changes. The scene now re-renders whenever the floor, devices or layer change, and the camera fit always includes device placements even when the plan has no walls or zones.
+- If the browser refuses or later drops the WebGL context (for example Brave Shields fingerprinting protection or a phone GPU over its limits), the floor view now shows an explanatory message with a reload button instead of a blank canvas.
+
 ## 1.4.6
 - Fixed a case where promoting a device (for example **device → admin**) could sign the promoted device out: a promotion no longer revokes the access token, so the device keeps its session and picks up the new permissions on its next action. Lowering a role, revoking a device and logging out still sign out immediately.
 
