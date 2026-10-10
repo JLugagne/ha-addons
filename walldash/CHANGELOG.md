@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.8
+- Refresh the `egauth` dependency to v0.16.1. The update keeps devices signed in: the token store now persists the "remember me" choice and the proved authentication method on the session, so the 60-day kiosk cookie stays persistent across silent token rotations. Devices that are already signed in are not logged out by this update.
+- Updated the bundled 3D library and the build/CI toolchain (GitHub Actions, Hugo, Docker base images).
+
 ## 1.4.7
 - Fixed the floor view on touch devices: switching floors could leave a blank canvas with the device badges piled in a corner, because the 3D scene only re-rendered on camera changes. The scene now re-renders whenever the floor, devices or layer change, and the camera fit always includes device placements even when the plan has no walls or zones.
 - If the browser refuses or later drops the WebGL context (for example Brave Shields fingerprinting protection or a phone GPU over its limits), the floor view now shows an explanatory message with a reload button instead of a blank canvas.
